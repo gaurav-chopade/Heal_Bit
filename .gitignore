@@ -1,0 +1,15 @@
+
+# Patient uploaded documents (stored on disk, not in git)
+backend/uploads/
+uploads/
+
+# Eclipse workspace
+.metadata/
+
+# Maven build output
+**/target/
+
+# Eclipse
+.project
+.classpath
+.settings/

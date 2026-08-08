@@ -1,0 +1,18 @@
+HEAL-BIT FRONTEND — how to drop this in
+=======================================
+
+1. Replace your existing  frontend/src  folder with the  src  folder in this zip.
+   (Delete the default App.css if it is still imported anywhere — these files
+    use index.css only.)
+
+2. Put the  .env  file in the frontend ROOT folder (next to package.json),
+   NOT inside src. It sets the backend URL (http://localhost:8080).
+
+3. Make sure these are installed (you already did this):
+      npm install react-router-dom axios
+
+4. Start the backend (port 8080), then:
+      npm run dev
+   Open http://localhost:5173
+
+Default admin login:  admin@healbit.com  /  Admin@123
