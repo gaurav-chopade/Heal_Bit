@@ -223,3 +223,12 @@ An administrator account is created automatically on first startup:
 **Backend** — Spring Boot, Spring Security (JWT), Hibernate/JPA, MySQL, Razorpay, Cloudinary, Jakarta Mail
 
 **Frontend** — React, Vite, React Router, Recharts, Axios
+
+---
+
+## 9. Deploying to a server
+
+A step-by-step guide for AWS (EC2 + RDS + Nginx + HTTPS) is in **[DEPLOYMENT.md](DEPLOYMENT.md)**.
+The ready-to-use server files (Nginx site, systemd service, environment template) are in the
+[`deploy/`](deploy) folder, and production settings live in
+`backend/src/main/resources/application-prod.properties`.

@@ -1,0 +1,7 @@
+# Keep the image build context small and never copy stale or private files into the image
+target/
+uploads/
+.settings/
+.project
+.classpath
+HELP.md

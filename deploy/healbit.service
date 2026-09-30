@@ -1,0 +1,27 @@
+# Install on the server as: /etc/systemd/system/healbit.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now healbit
+#   sudo systemctl status healbit
+#   journalctl -u healbit -f        (live logs)
+
+[Unit]
+Description=Heal-Bit Spring Boot backend
+# Start only after the network is up
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu
+
+# All secrets and settings are loaded from this file (template: healbit.env.example)
+EnvironmentFile=/etc/healbit.env
+
+ExecStart=/usr/bin/java -jar /home/ubuntu/healbit.jar
+
+# Restart automatically if the process crashes, waiting 5 seconds between attempts
+Restart=always
+RestartSec=5
+
+[Install]
+# Start on boot
+WantedBy=multi-user.target

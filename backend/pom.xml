@@ -105,6 +105,9 @@
 	</dependencies>
 
 	<build>
+		<!-- Produces target/healbit.jar (no version in the name), so the Dockerfile, the
+		     upload command and the systemd service never need updating on a version bump -->
+		<finalName>healbit</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

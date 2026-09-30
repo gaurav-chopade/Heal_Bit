@@ -13,3 +13,12 @@ uploads/
 .project
 .classpath
 .settings/
+
+# Frontend dependencies and build output (rebuilt with npm ci / npm run build)
+frontend/node_modules/
+frontend/dist/
+
+# Real secrets - only the *.example templates are committed
+deploy/healbit.env
+.env.local
+frontend/.env.local

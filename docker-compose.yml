@@ -15,12 +15,18 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/healbit_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+      # Browser origin of the frontend container (see SecurityConfig CORS)
+      HEALBIT_CORS_ALLOWED_ORIGINS: http://localhost:5173
     depends_on:
       - mysql
     restart: on-failure
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        # Backend URL as seen from the user's browser
+        VITE_API_BASE_URL: http://localhost:8080
     ports:
       - "5173:5173"
     depends_on:

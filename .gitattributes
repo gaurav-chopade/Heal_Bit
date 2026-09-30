@@ -1,0 +1,13 @@
+# Store text files with LF in the repository; check out with the platform default
+* text=auto
+
+# Files that run on Linux must ALWAYS be LF, even when checked out on Windows
+# (a CRLF in a systemd unit or an env file breaks it on the server)
+mvnw            text eol=lf
+*.sh            text eol=lf
+deploy/**       text eol=lf
+Dockerfile      text eol=lf
+.dockerignore   text eol=lf
+
+# Windows batch files need CRLF
+*.cmd           text eol=crlf
